@@ -1,0 +1,145 @@
+<!-- navbar -->
+<div class="topnav" id="myTopnav">
+  <a href="#home" ><span class="part1"> Just</span><span class="part2">Park</span></a>    
+    <a href="#home" routerLink="/aboutus"   ><i class="fa fa-home"></i>&nbsp;About Us</a>
+    <a href="#news" routerLink="/parkingoptions" ><i class="fa fa-car"></i>&nbsp;parking Options</a>
+    <a href="#contact" routerLink="/reservations" ><i class="fa fa-id-badge"></i>&nbsp;Reservations</a>
+    <a href="#about" routerLink="/location" ><i class="fa fa-map-marker"></i>&nbsp; Location</a>
+    <a style="float: right;" href="#about" routerLink="/homepage" ><i class="fa fa-sign-out"></i>&nbsp;Logout</a>
+    <!-- <a style="float: right;" href="#about"><i class="fa fa-lock"></i>&nbsp;Login</a> -->
+  </div>
+  <!-- navbar ends -->
+  
+  <section class="first">
+    <p class="onscreen"><br><br>Location</p>
+  </section>
+<br><br>
+  <!-- table1 -->
+<div class="table1">
+
+    <table class="tablemain">
+  
+      <tr>
+        <td height="90%" width="50%">
+            
+          <img src="../../assets/images/carpark3.jpg" alt="carpark2" height="90%" width="100%">
+        </td>
+  
+        <td height="90%" width="50%">
+         <p class="heading"><b>Got a Question?</b></p> 
+          
+            <div class="form">
+                <form class="example-form" >
+                    <fieldset>
+        
+                        <!-- fullName -->
+                        <mat-form-field appearance="outline" class="example-full-width"  color="accent" [style.fontSize.px]=20>
+                            <mat-label>Full Name</mat-label>
+                            <input matInput  placeholder="Please enter " minlength="3" maxlength="100" 
+                                #fullName="ngModel" ngModel name="fullName" class="input1">
+                            <mat-error *ngIf="fullName.invalid">Please enter a valid title.</mat-error>
+                        </mat-form-field>
+                        <br>
+                        <!-- email -->
+                        <mat-form-field appearance="outline" class="example-full-width"  color="accent"[style.fontSize.px]=20>
+                        <mat-label>Email Id</mat-label>
+                            <input matInput placeholder="Please enter a valid email" type="text"
+                            
+                            email #email="ngModel" ngModel name="email">
+                        <mat-error *ngIf="email.invalid">Please enter a valid email.</mat-error>
+                        </mat-form-field> 
+                        <br>
+                        <mat-form-field appearance="outline" class="example-full-width"  color="accent"[style.fontSize.px]=20>
+                            <mat-label>Send Message</mat-label>
+                            <textarea matInput ></textarea>
+                          </mat-form-field>
+                        <!-- submit button-->
+                        <div class="form-group">
+                            <a mat-raised-button class="btn"
+                            routerLink="."type="submit" color="accent" name="submit_reg" 
+                            value="Submit" (click)="registerProcess(registerForm)">Send message</a>
+                        </div>   
+                    </fieldset>
+                    </form>
+            </div>
+         
+        </td>
+      </tr>
+  
+      <tr>
+        <td height="60%" width="50%">
+          <p class="heading"><b>Contact Info</b></p> 
+          <br>
+          <p class="description1"><b>Coorporate Office Address</b></p>
+          <p class="description"> 
+            1234 River Street, New York, NY 01001
+          </p>
+          <p class="description1"><b>Coorporate Phone</b></p>
+          <p class="description"> 
+            1 (888) 123 4567
+          </p>
+          <p class="description1"><b>Coorporate E-mail</b></p>
+          <p class="description"> 
+            info@justpark.com
+          </p>
+          <p class="description1"><b>Coorporate Office hours</b></p>
+          <p class="description"> 
+            Mon – Fri: 8:00am – 5:00pm
+        </p>
+        </td>
+  
+        <td height="60%" width="50%">
+          <img src="../../assets/images/carpark2.jpg" alt="carpark3" height="90%" width="100%">
+        </td>
+      </tr>
+  
+    </table>
+  </div>
+  <br>
+
+<!-- footer starts -->
+
+<footer class="footer-distributed">
+
+    <div class="footer-left">
+      <h3>Just<span>Park</span></h3>
+      <p class="footer-links">
+        <a href="#" routerLink="/aboutus" class="link-1">About-Us</a>
+        <a href="#"routerLink="/parkingoptions" >Parking Options</a>
+        <a href="#" routerLink="/reservations">Reservations</a>
+        <a href="#" routerLink="/location">Location</a>
+      </p>
+      <p class="footer-company-name">Just Park © 2015</p>
+    </div>
+  
+    <div class="footer-center">
+      <div>
+        <i class="fa fa-map-marker"></i>
+        <p><span>444 S. Cedros Ave</span> Solana Beach, Florida</p>
+      </div>
+      <div>
+        <i class="fa fa-phone"></i>
+        <p>+1.9998887774</p>
+      </div>
+      <div>
+        <i class="fa fa-envelope"></i>
+        <p><a href="mailto:support@company.com">support@justpark.com</a></p>
+      </div>
+    </div>
+  
+    <div class="footer-right">
+      <p class="footer-company-about">
+        <span>About the company</span>
+        Short Stay and Valet parking options are just a few minutes' walk away from the terminal. 
+        If you're opting for Long Stay, the car park is just 10 minutes away by bus and shuttles 
+        run every 10-15 minutes.
+      </p>
+      <div class="footer-icons">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-github"></i></a>
+      </div>
+    </div>
+  
+  </footer>

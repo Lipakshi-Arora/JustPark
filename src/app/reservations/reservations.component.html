@@ -1,0 +1,164 @@
+<!-- navbar -->
+<div class="topnav" id="myTopnav">
+    <a href="#home" ><span class="part1"> Just</span><span class="part2">Park</span></a>    
+      <a href="#home" routerLink="/aboutus"   ><i class="fa fa-home"></i>&nbsp;About Us</a>
+      <a href="#news" routerLink="/parkingoptions" ><i class="fa fa-car"></i>&nbsp;parking Options</a>
+      <a href="#contact" routerLink="/reservations" ><i class="fa fa-id-badge"></i>&nbsp;Reservations</a>
+      <a href="#about" routerLink="/location" ><i class="fa fa-map-marker"></i>&nbsp; Location</a>
+      <a style="float: right;" href="#about" routerLink="/homepage" ><i class="fa fa-sign-out"></i>&nbsp;Logout</a>
+      <!-- <a style="float: right;" href="#about"><i class="fa fa-lock"></i>&nbsp;Login</a> -->
+    </div>
+<!-- navbar ends -->
+
+<section class="first">
+    <p class="onscreen"><br><br>Reservations</p>
+</section>
+<br>
+
+<div>
+    <p class="work">How Does it Works?</p>
+    <div class="grid-container">
+        <div class="grid-item">
+            <p class="heading1"><b> <i class="fa fa-money"></i><br>Save Money</b></p>
+            <p class="description1">
+               Save up to 70% on our site compared to the cost of on-airport parking.
+            </p>
+        </div>
+    
+        <div class="grid-item">
+            <p class="heading1"><b><i class="fa fa-clock-o"></i><br>Save Time</b></p>
+            <p class="description1">
+                It’s easy to compare parking at all major airports. Booking a reservation is quick & simple!
+            </p>
+        </div>
+    
+        <div class="grid-item">
+            <p class="heading1"><b><i class="fa fa-thumbs-o-up"></i><br>Save Stress</b></p>
+            <p class="description1">
+                Guarantee your parking spot by booking in advance. Can’t make it? Cancellations are free.
+            </p>
+        </div>  
+    </div>
+</div>
+<br>
+<div class="formMain">
+    
+    <p class="formDescription">Book!</p>
+    <!-- form  -->
+    <div class="container">
+        <div class="row">
+        <div class="col-md-6">
+            <form class="example-form" >
+            <fieldset>
+
+                <!-- fullName -->
+                <mat-form-field appearance="outline" class="example-full-width"  color="accent" [style.fontSize.px]=20>
+                    <mat-label>Full Name</mat-label>
+                    <input matInput  placeholder="Please enter " minlength="3" maxlength="100" required
+                        #fullName="ngModel" ngModel name="fullName" class="input1">
+                    <mat-error *ngIf="fullName.invalid">Please enter a valid title.</mat-error>
+                </mat-form-field>
+                <br>
+                <!-- email -->
+                <mat-form-field appearance="outline" class="example-full-width"  color="accent"[style.fontSize.px]=20>
+                <mat-label>Email Id</mat-label>
+                    <input matInput placeholder="Please enter a valid email" type="text"
+                    required
+                    email #email="ngModel" ngModel name="email">
+                <mat-error *ngIf="email.invalid">Please enter a valid email.</mat-error>
+                </mat-form-field> 
+                <br>
+                <!-- phone -->
+                <mat-form-field appearance="outline" class="example-full-width"  color="accent" [style.fontSize.px]=20>
+                    <mat-label>Phone No</mat-label>
+                    <input matInput  required
+                        #phone="ngModel" ngModel name="phone" class="input1">
+                    <mat-error *ngIf="phone.invalid">Please enter.</mat-error>
+                </mat-form-field>
+                <br>
+                <!-- checkIn-->
+                <mat-form-field appearance="outline" class="example-full-width"  color="accent" [style.fontSize.px]=20>
+                    <mat-label>Check In</mat-label>
+                    <input matInput [matDatepicker]="picker1">
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1 [calendarHeaderComponent]="exampleHeader"></mat-datepicker>
+                </mat-form-field>
+                <br>
+                <!-- checkOut-->
+                <mat-form-field appearance="outline" class="example-full-width"  color="accent" [style.fontSize.px]=20>
+                    <mat-label>Check Out</mat-label>
+                    <input matInput [matDatepicker]="picker">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker [calendarHeaderComponent]="exampleHeader"></mat-datepicker>
+                </mat-form-field>
+                <br>
+                <!-- parking options -->
+                <mat-form-field appearance="outline" class="example-full-width"  color="accent" [style.fontSize.px]=20>
+                    <mat-label>Parking options</mat-label>
+                    <mat-select [(ngModel)]="selectedValue" name="option">
+                        <mat-option *ngFor="let option of options" [value]="option.value">
+                        {{option.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <!-- submit button-->
+                <div class="form-group">
+                    <a mat-raised-button class="btn"
+                    routerLink="."type="submit" color="accent" name="submit_reg" 
+                    value="Submit" (click)="registerProcess(registerForm)">Submit</a>
+                </div>   
+            </fieldset>
+            </form><!-- ends register form --> <!-- second for to fiter user-->
+        </div><!-- ends col-6 -->
+        </div>
+
+    </div>
+</div>
+
+<!-- footer starts -->
+
+<footer class="footer-distributed">
+
+    <div class="footer-left">
+      <h3>Just<span>Park</span></h3>
+      <p class="footer-links">
+        <a href="#" routerLink="/aboutus" class="link-1">About-Us</a>
+        <a href="#"routerLink="/parkingoptions" >Parking Options</a>
+        <a href="#" routerLink="/reservations">Reservations</a>
+        <a href="#" routerLink="/location">Location</a>
+      </p>
+      <p class="footer-company-name">Just Park © 2015</p>
+    </div>
+  
+    <div class="footer-center">
+      <div>
+        <i class="fa fa-map-marker"></i>
+        <p><span>444 S. Cedros Ave</span> Solana Beach, Florida</p>
+      </div>
+      <div>
+        <i class="fa fa-phone"></i>
+        <p>+1.9998887774</p>
+      </div>
+      <div>
+        <i class="fa fa-envelope"></i>
+        <p><a href="mailto:support@company.com">support@justpark.com</a></p>
+      </div>
+    </div>
+  
+    <div class="footer-right">
+      <p class="footer-company-about">
+        <span>About the company</span>
+        Short Stay and Valet parking options are just a few minutes' walk away from the terminal. 
+        If you're opting for Long Stay, the car park is just 10 minutes away by bus and shuttles 
+        run every 10-15 minutes.
+      </p>
+      <div class="footer-icons">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-github"></i></a>
+      </div>
+    </div>
+  
+  </footer>
